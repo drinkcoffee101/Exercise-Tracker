@@ -30,10 +30,13 @@ export default class CreateExcercice extends Component {
         axios.get('http://localhost:5000/users/')
             .then(response => {
                 if (response.data.length) {
+
+                    let filteredData = response.data.filter(user => user.username !== undefined)
+
                     this.setState({
-                        users: response.data.map(user => user.username),
+                        users: filteredData.map(user => user.username),
                         username: response.data[0].username
-                    })
+                    }, () => console.log(response.data[0]))
                 }
             })
     }
@@ -92,9 +95,9 @@ export default class CreateExcercice extends Component {
                             value={this.state.username}
                             onChange={this.onChangeUsername}>
                             {
-                                this.state.users.map(user => {
+                                this.state.users.map((user, i) => {
                                     return <option
-                                        key={user}
+                                        key={i}
                                         value={user}>{user}
                                     </option>
                                 })
