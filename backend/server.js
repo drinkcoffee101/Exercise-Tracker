@@ -18,7 +18,7 @@ const serverOptions = {
       socketTimeoutMS: 6000000
     }
   };
-// console.log(uri)
+
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true})
 
 const connection = mongoose.connection
