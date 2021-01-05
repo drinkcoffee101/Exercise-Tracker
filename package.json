@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://github.com/drinkcoffee101/Exercise-Tracker",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "react": "^16.11.0",
     "react-datepicker": "^2.9.6",
     "react-dom": "^16.11.0",
